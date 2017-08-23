@@ -13,8 +13,10 @@
   $ALLOW_MANUAL_PAGE = 0;  // Can a dispatcher page a unit manually from CAD?  This feature has problems, use with care; default is now 0 (don't allow it.)
 
 // Header display:
-  $HEADER_LOGO = "Logos/logo.png";
-  $HEADER_TITLE = "Black&nbsp;Flower<br>Computer&nbsp;Aided&nbsp;Dispatch";
+// $HEADER_LOGO = "Logos/logo.png";
+  $HEADER_LOGO = "Logos/fire.png";
+// $HEADER_TITLE = "Black&nbsp;Flower<br>Computer&nbsp;Aided&nbsp;Dispatch";
+  $HEADER_TITLE = "SockCAD<br>Computer&nbsp;Aided&nbsp;Dispatch";
 
 // Booleans:
   $BULLETIN_TITLE_SCAN = 1;      //

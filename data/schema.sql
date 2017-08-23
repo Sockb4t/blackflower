@@ -151,7 +151,6 @@ CREATE TABLE units (
 	status	        VARCHAR(30),
 	status_comment  VARCHAR(255),
 	update_ts       DATETIME,
-	-- role	        SET('Fire', 'Medical', 'Comm', 'MHB', 'Admin', 'Law Enforcement', 'Other'),
 	role            VARCHAR(20),
 	type	        SET('Unit', 'Individual', 'Generic'),
 	personnel       VARCHAR(100),
@@ -296,31 +295,32 @@ CREATE TABLE deployment_history (
 INSERT INTO incident_disposition_types VALUES ('Completed');
 INSERT INTO incident_disposition_types VALUES ('Medical Transported');
 INSERT INTO incident_disposition_types VALUES ('Other');
-INSERT INTO incident_disposition_types VALUES ('Released AMA');
+INSERT INTO incident_disposition_types VALUES ('Assisted and Released');
 INSERT INTO incident_disposition_types VALUES ('Transferred to Agency');
-INSERT INTO incident_disposition_types VALUES ('Transferred to Rangers');
+INSERT INTO incident_disposition_types VALUES ('Transferred to Police');
 INSERT INTO incident_disposition_types VALUES ('Treated And Released');
 INSERT INTO incident_disposition_types VALUES ('Unable To Locate');
 INSERT INTO incident_disposition_types VALUES ('Unfounded');
 INSERT INTO incident_disposition_types VALUES ('Duplicate');
 
-INSERT INTO incident_types VALUES ('COURTESY TRANSPORT');
+INSERT INTO incident_types VALUES ('PRODUCTION ASSIST');
 INSERT INTO incident_types VALUES ('FIRE');
-INSERT INTO incident_types VALUES ('LAW ENFORCEMENT');
+INSERT INTO incident_types VALUES ('SECURITY');
 INSERT INTO incident_types VALUES ('ILLNESS');
 INSERT INTO incident_types VALUES ('INJURY');
 INSERT INTO incident_types VALUES ('MENTAL HEALTH');
 INSERT INTO incident_types VALUES ('PUBLIC ASSIST');
 INSERT INTO incident_types VALUES ('TRAFFIC CONTROL');
 INSERT INTO incident_types VALUES ('TRAINING');
-INSERT INTO incident_types VALUES ('RANGERS');
+INSERT INTO incident_types VALUES ('TECHNICAL ISSUE');
 INSERT INTO incident_types VALUES ('OTHER');
+INSERT INTO incident_types VALUES ('AGENCY ASSIST');
 
-INSERT INTO message_types VALUES ('Swim');
-INSERT INTO message_types VALUES ('Run');
-INSERT INTO message_types VALUES ('Bike');
-INSERT INTO message_types VALUES ('DNF');
-INSERT INTO message_types VALUES ('DQ');
+INSERT INTO message_types VALUES ('Radio');
+INSERT INTO message_types VALUES ('Phone');
+INSERT INTO message_types VALUES ('Email');
+INSERT INTO message_types VALUES ('Personal');
+INSERT INTO message_types VALUES ('Fax');
 INSERT INTO message_types VALUES ('Other');
 
 INSERT INTO status_options VALUES ('Attached to Incident');  -- Magic string
@@ -334,39 +334,27 @@ INSERT INTO status_options VALUES ('Out of Service');
 INSERT INTO status_options VALUES ('Off Duty; On Pager');
 
 INSERT INTO unit_roles (role, color_name, color_html) VALUES 
-('Medical', 'Blue', 'Blue'),
+('Security', 'Blue', 'Blue'),
 ('Fire', 'Red', 'Red'),
-('MHB', 'Green', 'Green'),
-('Comm', 'Purple', 'Purple'),
-('Admin', 'Orange', 'darkorange'),
-('Law Enforcement', 'Brown', 'brown'),
+('Medical', 'Green', 'Green'),
+('Production', 'Purple', 'Purple'),
+('Technical', 'Orange', 'darkorange'),
+('Facilities', 'Brown', 'brown'),
 ('Other', 'Black', 'Black');
 
 INSERT INTO unit_assignments (assignment, description, display_class, display_style) VALUES
-('BC', 'Battalion Chief', 'iconyellow', NULL),
+('SC', 'Sector Commander', 'iconyellow', NULL),
 ('IC', 'Incident Commander', 'iconwhite', NULL),
-('ODC', 'Operations Duty Chief', 'iconwhite', NULL),
-('FDC', 'Fire Duty Chief', 'iconred', NULL),
-('MDC', 'Medical Duty Chief', 'iconblue', NULL),
-('ADC', 'Assistant Medical Duty Chief', 'iconblue', NULL),
-('SDC', 'Support Duty Chief', 'icongray', NULL),
-('CDC', 'Comm Duty Chief', 'iconpurple', NULL),
+('IRO', 'Incident Response Officer', 'iconyellow', NULL),
+('TL', 'Team Leader', 'iconred', NULL),
+('EPO', 'Emergency Planning Officer', 'iconpurple', NULL),
 ('OC', 'On-Call', 'icongray', NULL),
-('S', 'Supervisor', 'icongray', NULL),
-('FS', 'Field Supervisor', 'icongray', NULL),
-('MHDC', 'Mental Health Duty Chief', 'icongreen', NULL),
-('L2000', 'Legal 2000 On-Call', 'icongreen', NULL),  
-('CRC', 'Child Respite Center On-Call', 'icongreen', NULL);
-
+('LO', 'Liaison Officer', 'iconblue', NULL),
+('VOL', 'Volunteer', 'icongreen', NULL);
 
 INSERT INTO channels (channel_name, repeater, available, precedence) VALUES 
-('Tac 11', 0, 1, 10),
-('Tac 12', 1, 1, 10),
-('Tac 13', 0, 1, 10),
-('Fire Ground 1', 0, 1, 20),
-('Fire Ground 2', 0, 1, 20),
-('911', 1, 0, 97),
-('Operations', 1, 0, 98),
-('Admin', 1, 0, 99);
+('Operational', 0, 1, 10),
+('Command', 0, 1, 10),
+('Reserve/MI', 0, 0, 99);
 
 INSERT INTO deployment_history (schema_load_ts, database_version, requires_code_ver, mysql_user) VALUES (NOW(), @provides_database_version, @requires_code_version, CURRENT_USER());

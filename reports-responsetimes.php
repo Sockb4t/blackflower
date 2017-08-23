@@ -115,7 +115,7 @@ $query_overall_base = "
         // top row
         $this->SetY(12);
         $this->SetFont('Arial','B',14);
-        $this->Cell(160,5,'Black Rock City ESD - Response Times Report',0,0);
+        $this->Cell(160,5,'SockCAD - Response Times Report',0,0);
 
         $this->SetFont('Arial','',12);
         // bottom row

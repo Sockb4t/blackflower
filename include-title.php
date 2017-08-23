@@ -42,7 +42,7 @@
 <td valign=bottom class=headertext style="padding-top: 5px"><?php print $HEADER_TITLE?></td>
 
 <td align=right class=headerinfo title="Release Date <?php print $OC_RELEASE_DATE?>">
-  Black Flower CAD v<?php print $OC_VERSION?> <?php print $OC_LEVEL?> 
+  SockCAD v<?php print $OC_VERSION?> <?php print $OC_LEVEL?> 
 &mdash;
 <?php
   if ($_SESSION['username'] != "") {

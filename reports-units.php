@@ -30,13 +30,14 @@ function SetReportsCriteria($unit, $date) {
 
 function Header()
 {
-    $this->Image('Logos/logo-esd.jpg',175,8,16);
+    $this->Image("$HEADER_LOGO",175,8,20);
+//    $this->Image('Logos/logo-esd.jpg',175,8,16);
     $this->SetFillColor(230);
 
     // top row
     $this->SetY(12);
     $this->SetFont('Arial','B',14);
-    $this->Cell(160,5,'Black Rock City ESD - Unit Report',0,0);
+    $this->Cell(160,5,'SockCAD - Unit Report',0,0);
 
     $this->SetFont('Arial','',10);
     // bottom row

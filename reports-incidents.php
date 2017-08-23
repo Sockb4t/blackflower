@@ -178,7 +178,7 @@ if($opencount > 0) {
         // top row
         $this->SetY(12);
         $this->SetFont('Arial','B',14);
-        $this->Cell(160,5,'Black Rock City ESD - Incidents Report',0,0);
+        $this->Cell(160,5,'SockCAD - Incidents Report',0,0);
 
         $this->SetFont('Arial','',12);
         // bottom row

@@ -17,11 +17,11 @@
 <p class="textj">
 This page provides brief instructions on how to use the software.  This software is still
 under development, so if you have a question about it, a feature suggestion or bug report,
-send email to <a href="mailto:cad-info@forlorn.net">&lt;cad-info@forlorn.net&gt;</a>.
+send email to <a href="mailto:SockCAD@sockbat.33mail.com">&lt;SockCAD@sockbat.33mail.com&gt;</a>.
 <p>
 <b>General Usage Notes</b>
 <p class="textj">
-    Black Flower CAD is a Computer Aided Dispatch application which runs on a Netscape based Web browser (such
+    SockCAD is a Computer Aided Dispatch application which runs on a Netscape based Web browser (such
     as Netscape, Mozilla, Firefox, et cetera.)  The back end is a SQL database with PHP interface pages.
     Certain parts of the critical JavaScript code in CAD are NOT currently written to work
     under Internet Explorer, so use IE only at your own risk.  It is recommended that you
