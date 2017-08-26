@@ -353,8 +353,8 @@ INSERT INTO unit_assignments (assignment, description, display_class, display_st
 ('VOL', 'Volunteer', 'icongreen', NULL);
 
 INSERT INTO channels (channel_name, repeater, available, precedence) VALUES 
-('Operational', 0, 1, 10),
-('Command', 0, 1, 10),
-('Reserve/MI', 0, 0, 99);
+('TG11', 0, 1, 10),
+('TG12', 0, 1, 10),
+('TG91', 0, 0, 99);
 
 INSERT INTO deployment_history (schema_load_ts, database_version, requires_code_ver, mysql_user) VALUES (NOW(), @provides_database_version, @requires_code_version, CURRENT_USER());
