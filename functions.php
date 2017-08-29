@@ -63,6 +63,7 @@ function CheckAuthByLevel ($requested_privilege, $access_level) {
   global $ACCESS_LEVEL_EDIT_USERS;
   global $ACCESS_LEVEL_EDITCHANNELS;
   global $ACCESS_LEVEL_EDIT_CHANNELS;
+  global $ACCESS_LEVEL_EDIT_LOG;
   global $ACCESS_LEVEL_EDIT_STAGING_LOCATIONS;
   global $ACCESS_LEVEL_EDIT_REPORT_FILTERS;
   global $ACCESS_LEVEL_CREATE_BULLETINS;
@@ -80,6 +81,7 @@ function CheckAuthByLevel ($requested_privilege, $access_level) {
   if (!isset( $ACCESS_LEVEL_EDIT_USERS)) { $ACCESS_LEVEL_EDIT_USERS = 10; }
   if (!isset( $ACCESS_LEVEL_EDITCHANNELS)) { $ACCESS_LEVEL_EDITCHANNELS = 5; }
   if (!isset( $ACCESS_LEVEL_EDIT_CHANNELS)) { $ACCESS_LEVEL_EDIT_CHANNELS = $ACCESS_LEVEL_EDITCHANNELS; } // Provide backwards compatibility with old (1.9) config variable name
+  if (!isset( $ACCESS_LEVEL_EDIT_LOG)) { $ACCESS_LEVEL_EDIT_LOG = 10; }
   if (!isset( $ACCESS_LEVEL_EDIT_STAGING_LOCATIONS)) { $ACCESS_LEVEL_EDIT_STAGING_LOCATIONS = 1; }
   if (!isset( $ACCESS_LEVEL_EDIT_REPORT_FILTERS)) { $ACCESS_LEVEL_EDIT_REPORT_FILTERS = 10; }
   if (!isset( $ACCESS_LEVEL_CREATE_BULLETINS)) { $ACCESS_LEVEL_CREATE_BULLETINS = 5; }
@@ -97,6 +99,7 @@ function CheckAuthByLevel ($requested_privilege, $access_level) {
   $LEVELS["admin_cleardb"] = (int) $ACCESS_LEVEL_ADMIN_CLEARDB;
   $LEVELS["edit_users"] = (int) $ACCESS_LEVEL_EDIT_USERS;
   $LEVELS["edit_channels"] = (int) $ACCESS_LEVEL_EDIT_CHANNELS;
+  $LEVELS["edit_log"] = (int) $ACCESS_LEVEL_EDIT_LOG;
   $LEVELS["edit_staging_locations"] = (int) $ACCESS_LEVEL_EDIT_STAGING_LOCATIONS;
   $LEVELS["edit_report_filters"] = (int) $ACCESS_LEVEL_EDIT_REPORT_FILTERS;
   $LEVELS["create_bulletins"] = (int) $ACCESS_LEVEL_CREATE_BULLETINS;

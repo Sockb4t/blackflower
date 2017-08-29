@@ -3,10 +3,19 @@
   require_once('db-open.php');
   include('local-dls.php');
   require_once('session.inc');
+  require_once('functions.php');
 
   $subsys='cad';
   SessionErrorIfReadonly();
   $deleted=0;
+
+  if (!CheckAuthByLevel('edit_log', $_SESSION['access_level'])) {
+    syslog(LOG_WARNING, "Log editing attempted without permissions by user ". $_SESSION['username'] ." level ". $_SESSION['access_level']);
+    echo "Access level insufficient for this operation.<br />\n";
+    echo "User: " . $_SESSION['username'] . "<br />\n";
+    echo "Level: " . $_SESSION['access_level'] . "<br />\n";
+    exit;
+  }
 
   if (isset($_POST["oid"])) {
     $oid = MysqlClean($_POST,"oid",20);
